@@ -5,8 +5,8 @@ function checkCashRegister(price, cash, cid) {
     let map = new Map()
   
     let finalChange = {
-    status: "",
-    change: new Array()
+        status: "",
+        change: new Array()
     }
   
     for (var i = 0; i < cid.length; i++) {
@@ -32,13 +32,13 @@ function checkCashRegister(price, cash, cid) {
     } 
 
     if (money == change) {
-     finalChange.status = "CLOSED";
-     finalChange.change = cid;
+        finalChange.status = "CLOSED";
+        finalChange.change = cid;
     } else if (change > 0 || money < change) {
-     finalChange.change = [];
-     finalChange.status = "INSUFFICIENT_FUNDS"; 
+        finalChange.change = [];
+        finalChange.status = "INSUFFICIENT_FUNDS"; 
     } else {
-     finalChange.status = "OPEN";
+        finalChange.status = "OPEN";
     }
     return finalChange;
 }
